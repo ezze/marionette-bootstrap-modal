@@ -1,0 +1,22 @@
+{
+    "browser": true,
+    "camelcase": true,
+    "curly": true,
+    "devel": true,
+    "eqeqeq": true,
+    "expr": false,
+    "globals": {
+        "define": false,
+        "require": false
+    },
+    "indent": 4,
+    "loopfunc": false,
+    "maxdepth": 4,
+    "maxlen": 120,
+    "newcap": false,
+    "noarg": true,
+    "nonstandard": true,
+    "quotmark": "single",
+    "undef": true,
+    "unused": "vars"
+}

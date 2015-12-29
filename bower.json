@@ -1,0 +1,36 @@
+{
+  "name": "marionette-bootstrap-modal",
+  "homepage": "https://github.com/ezze/marionette-bootstrap-modal",
+  "authors": [
+    "Dmitriy Puhkov <ezze@ezze.org>"
+  ],
+  "description": "Bootstrap modal windows support for Backbone Marionette library",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "bootstrap",
+    "modal",
+    "window",
+    "backbone",
+    "marionette"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "lib",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.marionette": "marionette#~2.4.4",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1",
+    "requirejs": "~2.1.22",
+    "require-i18next": "~0.5.0",
+    "text": "~2.0.14"
+  }
+}
