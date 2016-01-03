@@ -30,6 +30,7 @@
     "jquery": "~2.1.4",
     "lodash": "~3.10.1",
     "requirejs": "~2.1.22",
+    "requirejs-hogan-plugin": "~0.3.1",
     "require-i18next": "~0.5.0",
     "text": "~2.0.14"
   }

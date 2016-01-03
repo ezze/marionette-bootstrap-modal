@@ -1,10 +1,12 @@
 define({
     baseUrl: './src/js',
+    /*
     map: {
         '*': {
             'underscore': 'lodash'          // replacing Underscore with Lo-Dash
         }
     },
+    */
     paths: {
         'backbone': '../../lib/backbone/backbone',
         'bootstrap': '../../lib/bootstrap/dist/js/bootstrap',
@@ -26,14 +28,6 @@ define({
                 'jquery'
             ],
             exports: '$'
-        },
-        'marionette': {
-            deps: [
-                'jquery',
-                'underscore',
-                'backbone'
-            ],
-            exports: 'Marionette'
         }
     },
     i18next: {

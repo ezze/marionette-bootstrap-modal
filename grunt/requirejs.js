@@ -31,15 +31,8 @@ module.exports = function(grunt) {
             i18next: config.i18next,
             inlineI18next: true,
             stubModules: [
-                'backbone',
-                'bootstrap',
-                'i18next',
-                'jquery',
-                'lodash',
-                'marionette',
-                'text',
-                'underscore',
-                'IPv6'
+                'hgn',
+                'text'
             ],
             wrap: {
                 startFile: 'src/wrap/start.frag',
@@ -49,14 +42,14 @@ module.exports = function(grunt) {
         development: {
             options: {
                 out: 'dist/modal-manager.js',
-                generateSourceMaps: true,
+                generateSourceMaps: false,
                 optimize: 'none'
             }
         },
         production: {
             options: {
                 out: 'dist/modal-manager.js',
-                generateSourceMaps: false,
+                generateSourceMaps: true,
                 optimize: 'uglify2'
             }
         }
