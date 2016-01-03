@@ -1,12 +1,10 @@
 define({
     baseUrl: './src/js',
-    /*
     map: {
         '*': {
             'underscore': 'lodash'          // replacing Underscore with Lo-Dash
         }
     },
-    */
     paths: {
         'backbone': '../../lib/backbone/backbone',
         'bootstrap': '../../lib/bootstrap/dist/js/bootstrap',

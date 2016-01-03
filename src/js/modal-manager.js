@@ -1,13 +1,13 @@
 define([
     'backbone',
-    'lodash',
     'jquery',
+    'underscore',
     './modal',
     './views/modal-view'
 ], function(
     Backbone,
-    _,
     $,
+    _,
     Modal,
     ModalView
 ) {

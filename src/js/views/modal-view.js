@@ -1,14 +1,14 @@
 define([
     'bootstrap',
     'jquery',
-    'lodash',
     'marionette',
+    'underscore',
     '../templates/modal'
 ], function(
     Bootstrap,
     $,
-    _,
     Marionette,
+    _,
     template
 ) {
     'use strict';

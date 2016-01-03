@@ -1,6 +1,6 @@
 define([
     'backbone',
-    'lodash'
+    'underscore'
 ], function(
     Backbone,
     _

@@ -16,6 +16,14 @@ module.exports = function(grunt) {
     // https://github.com/jcbvm/require-i18next#inlining-locales
     config.shim.almond = ['i18next'];
 
+    if (config.map['*'] && config.map['*'].underscore) {
+        // TODO: investigate how to use Lo-Dash instead of Underscore in standalone library
+        // Replacing Underscore with Lo-dash causes "backbone missing underscore"
+        // error in standalone library created with r.js "wrap" option,
+        // so still using Underscore there
+        delete config.map['*'].underscore;
+    }
+
     return {
         options: {
             almond: true,
@@ -32,6 +40,7 @@ module.exports = function(grunt) {
             inlineI18next: true,
             stubModules: [
                 'hgn',
+                'lodash',
                 'text'
             ],
             wrap: {
