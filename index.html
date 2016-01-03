@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marionette Bootstrap Modal</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Marionette Bootstrap Modal Manager">
+    <meta name="keywords" content="marionette,bootstrap,modal">
+    <meta name="author" content="Dmitriy Pushkov">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="btn-group" role="group">
+            <button type="button" class="modal-button btn btn-default" data-modal="function">JavaScript function</button>
+            <button type="button" class="modal-button btn btn-default" data-modal="micro-template">Underscore micro-template</button>
+        </div>
+    </div>
+    
+    <script src="lib/requirejs/require.js"></script>
+    <script>
+        (function(require) {
+            var requireConfig = {
+                baseUrl: './src/js',
+                urlArgs: 'q=' + (new Date()).getTime()
+            };
+            require(requireConfig);
+            require(['./main'], function(init) {
+                init();
+            });
+        })(require);
+    </script>
+</body>
+</html>

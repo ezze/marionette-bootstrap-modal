@@ -1,0 +1,19 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            {{#closeButton}}
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{/closeButton}}
+            <h4 class="modal-title" data-i18n="{{titleI18n}}">{{title}}</h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            {{#buttons}}
+                <button type="button" class="modal-button btn btn-{{#style}}{{style}}{{/style}}{{^style}}default{{/style}}" data-id="{{id}}" data-i18n="{{captionI18n}}">{{caption}}</button>
+            {{/buttons}}
+            {{#closeButton}}
+            <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="{{closeButtonCaptionI18n}}">{{closeButtonCaption}}</button>
+            {{/closeButton}}
+        </div>
+    </div>
+</div>
