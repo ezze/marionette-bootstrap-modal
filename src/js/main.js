@@ -32,9 +32,21 @@ define([
                         dataModal = $target.attr('data-modal');
 
                     switch (dataModal) {
-                        case 'marionette-view':
+                        case 'function':
                             modalManager.show({
-                                title: 'Marionette view',
+                                title: 'JavaScript function',
+                                view: new Marionette.ItemView({
+                                    template: function(params) { return '<p>Hello, ' + params.value + '!</p>'; },
+                                    model: new Backbone.Model({
+                                        value: 'world'
+                                    })
+                                })
+                            });
+                            break;
+
+                        case 'micro-template':
+                            modalManager.show({
+                                title: 'Underscore micro-template',
                                 view: new Marionette.ItemView({
                                     template: _.template('<p>Hello, <%- value %>!</p>'),
                                     model: new Backbone.Model({
