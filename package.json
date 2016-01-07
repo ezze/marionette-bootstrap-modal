@@ -1,6 +1,6 @@
 {
   "name": "marionette-bootstrap-modal",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "Bootstrap modal windows support for Backbone Marionette library",
   "main": "src/js/main.js",
   "scripts": {
