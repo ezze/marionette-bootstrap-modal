@@ -29,12 +29,15 @@ define([
             this._hideDeferred = null;
 
             var i18nEventObject = options.i18nEventObject,
-                i18nEventName = options.i18nEventName;
+                i18nEventName = options.i18nEventName,
+                i18nEventAttribute = options.i18nEventAttribute;
             this._i18nEventObject = i18nEventObject && _.isFunction(i18nEventObject.trigger) ? i18nEventObject : null;
             this._i18nEventName = _.isString(i18nEventName) ? i18nEventName : 'language';
+            this._i18nEventAttribute = _.isString(i18nEventAttribute) ? i18nEventAttribute : 'language';
 
             if (this._i18nEventObject) {
                 this.listenTo(this._i18nEventObject, this._i18nEventName, this.translate);
+                this.listenTo(this._i18nEventObject, 'change:' + this._i18nEventAttribute, this.translate);
             }
         },
         translate: function() {

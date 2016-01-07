@@ -178,7 +178,8 @@ Modal manager can be used with [i18next](http://i18next.com/):
     var modalManager = new ModalManager({
         container: 'body',
         i18nEventObject: app,
-        i18nEventName: 'language'       // optional, defaults to 'language' 
+        i18nEventName: 'language'       // optional, defaults to 'language',
+        i18nEventAttribute: 'language'  // optional, defaults to 'language' 
     });
     
     modalManager.show({
@@ -194,8 +195,8 @@ Modal manager can be used with [i18next](http://i18next.com/):
         }]
     });
     
-Each time event `i18nEventName` is triggered on `i18nEventObject` current active modal view will be translated
-by calling its `this.$el.i18n()`.
+Each time event `i18nEventName` is triggered on `i18nEventObject` object or attribute `i18nEventAttribute` of
+model `i18nEventObject` is changed current active modal view will be translated by calling its `this.$el.i18n()`.
 
 ## Contribution
 
