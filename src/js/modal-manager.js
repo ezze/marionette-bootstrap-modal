@@ -19,9 +19,11 @@ define([
         this._modalView = null;
 
         var i18nEventObject = options.i18nEventObject,
-            i18nEventName = options.i18nEventName;
+            i18nEventName = options.i18nEventName,
+            i18nEventAttribute = options.i18nEventAttribute;
         this._i18nEventObject = i18nEventObject && _.isFunction(i18nEventObject.trigger) ? i18nEventObject : null;
         this._i18nEventName = _.isString(i18nEventName) ? i18nEventName : 'language';
+        this._i18nEventAttribute = _.isString(i18nEventAttribute) ? i18nEventAttribute : 'language';
     };
 
     _.extend(exports.prototype, {
@@ -51,7 +53,8 @@ define([
             this._modalView = new ModalView({
                 model: modal,
                 i18nEventObject: this._i18nEventObject,
-                i18nEventName: this._i18nEventName
+                i18nEventName: this._i18nEventName,
+                i18nEventAttribute: this._i18nEventAttribute
             });
 
             this._modalView.render();
