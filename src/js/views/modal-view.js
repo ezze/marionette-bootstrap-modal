@@ -47,7 +47,9 @@ define([
             var that = this,
                 deferred = new $.Deferred(),
                 hideDeferred = (this._hideDeferred = new $.Deferred()),
-                closeButton = this.model.get('closeButton');
+                closeButton = this.model.get('closeButton'),
+                beforeCloseHandler = this.model.get('beforeCloseHandler'),
+                closeHandler = this.model.get('closeHandler');
 
             this.$el.modal({
                 backdrop: closeButton ? true : 'static',
@@ -55,9 +57,22 @@ define([
                 show: true
             }).one('shown.bs.modal', function() {
                 deferred.resolve(that);
-            }).one('hidden.bs.modal', function() {
+            }).one('hidden.bs.modal', _.bind(function() {
+                if (_.isFunction(closeHandler)) {
+                    closeHandler.apply(this, [this.getRegion('body').currentView]);
+                }
                 hideDeferred.resolve(that);
-            });
+                this.$el.off('hide.bs.modal');
+
+            }, this));
+
+            this.$el.on('hide.bs.modal', _.bind(function(event) {
+                if (_.isFunction(beforeCloseHandler)) {
+                    if (beforeCloseHandler.apply(this, [this.getRegion('body').currentView]) === false) {
+                        event.preventDefault();
+                    }
+                }
+            }, this));
 
             return deferred;
         },
