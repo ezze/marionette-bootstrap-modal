@@ -16,6 +16,8 @@ define([
             closeButtonCaption: 'Close',
             closeButtonCaptionI18n: 'modal.close',
             closeButtonStyle: 'default',
+            closeHandler: function(view) {},
+            beforeCloseHandler: function(view) {},
             buttons: []
         },
         initialize: function() {
