@@ -108,6 +108,34 @@ Use modal manager in your AMD module:
             })
         });
     });
+    
+### Options
+
+Here is a full list of properties that can be passed to `ModalManager.show()` method:
+
+- `title` — modal window's title (empty by default);
+- `titleI18n` — value of `data-i18n` attribute used to translate modal window's title with `i18next` (empty by default);
+- `view` — instance of Marionette view to use as modal window's body;
+- `closeButton` — whether modal window has close button and can be closed by a user (defaults to `true`);
+- `closeButtonCaption` — caption of close button (defaults to `Close`);
+- `closeButtonCaptionI18n` — value of `data-i18n` attribute used to translate close button's caption with `i18next`
+(defaults to `modal.close`);
+- `closeButtonStyle` — Bootstrap type of close button, possible values are `default` (default), `primary`, `success`,
+`info`, `warning`, `danger`, `link`,
+- `closeHandler` — a function to execute when modal window is closed (`this` refers to active `ModalView` instance,
+and modal window's body `view` is passed as an argument);
+- `beforeCloseHandler` — a function to execute just before closing modal window (`this` refers to active `ModalView`
+instance, and modal window's body `view` is passed as an argument); if the function returns `false` then modal window
+will be prevented from being closed;
+- `buttons` — array of objects where each object describes modal window's additional button and consists of the
+following properties:
+    - `id` — button's string identifier;
+    - `caption` — button's caption (empty by default);
+    - `captionI18n` — value of `data-i18n` attribute used to translate button's caption width `i18next`
+    (empty by default);
+    - `style` — Bootstrap type of button, the same as `closeButtonStyle` (defaults to `default`);
+    - `handler` — a function to execute on button click (`this` refers to active `ModalView` instance, and modal
+    window's body `view` and button's `id` are passed as arguments). 
         
 ## Events
 
