@@ -15,6 +15,7 @@ define([
             closeButton: true,
             closeButtonCaption: 'Close',
             closeButtonCaptionI18n: 'modal.close',
+            closeButtonStyle: 'default',
             buttons: []
         },
         initialize: function() {
