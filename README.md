@@ -8,7 +8,7 @@
 
     - Ubuntu:
 
-        sudo apt-get install nodejs npm
+            sudo apt-get install nodejs npm
 
 2. Install [Grunt.js command line interface](http://gruntjs.com/) globally:
 
