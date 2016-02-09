@@ -3,12 +3,14 @@ define([
     'jquery',
     'underscore',
     './modal',
+    './views/modal-text-view',
     './views/modal-view'
 ], function(
     Backbone,
     $,
     _,
     Modal,
+    ModalTextView,
     ModalView
 ) {
     'use strict';
@@ -92,6 +94,84 @@ define([
 
             var view = model.get('view');
             return view instanceof Backbone.View ? view : null;
+        },
+        showText: function(options) {
+            options = options || {};
+
+            options.view = new ModalTextView({
+                model: new Backbone.Model({
+                    blocks: options.blocks || [],
+                    type: options.type || 'paragraph',
+                    paragraphCssClass: options.paragraphCssClass || 'modal-paragraph',
+                    listCssClass: options.listCssClass || 'modal-list',
+                    listItemCssClass: options.listItemCssClass || 'modal-list-item'
+                })
+            });
+
+            _.each([
+                'blocks',
+                'type',
+                'paragraphCssClass',
+                'listCssClass',
+                'listItemCssClass'
+            ], function(item) {
+                if (options[item]) {
+                    delete options[item];
+                }
+            });
+
+            return this.show(options);
+        },
+        confirm: function(options) {
+            var deferred = new $.Deferred();
+
+            options.view = new ModalTextView({
+                model: new Backbone.Model({
+                    blocks: [options.text || 'Confirm?'],
+                    type: 'paragraph',
+                    paragraphCssClass: options.textCssClass || 'modal-confirmation-text'
+                })
+            });
+
+            options.closeButton = false;
+            options.buttons = [{
+                id: 'yes',
+                caption: options.confirmButtonCaption || 'Yes',
+                captionI18n: options.confirmButtonCaptionI18n || 'modal.yes',
+                handler: function() {
+                    var hideDeferred = this.hide();
+                    hideDeferred.always(function() {
+                        deferred.resolve();
+                    });
+                }
+            }, {
+                id: 'no',
+                caption: options.declineButtonCaption || 'No',
+                captionI18n: options.declineButtonCaptionI18n || 'modal.no',
+                handler: function() {
+                    var hideDeferred = this.hide();
+                    hideDeferred.always(function() {
+                        deferred.reject();
+                    });
+                }
+            }];
+
+            _.each([
+                'text',
+                'textCssClass',
+                'confirmButtonCaption',
+                'confirmButtonCaptionI18n',
+                'declineButtonCaption',
+                'declineButtonCaptionI18n'
+            ], function(item) {
+                if (options[item]) {
+                    delete options[item];
+                }
+            });
+
+            this.show(options);
+
+            return deferred;
         }
     });
 

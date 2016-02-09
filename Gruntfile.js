@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('js', [
-        'hogan:modal',
+        'hogan',
         'jshint',
         'requirejs:development',
         'uglify:production'

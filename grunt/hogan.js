@@ -9,6 +9,10 @@ module.exports = function(grunt) {
         modal: {
             src: 'src/js/templates/modal.mustache',
             dest: 'src/js/templates/modal.js'
+        },
+        'modal-text': {
+            src: 'src/js/templates/modal-text.mustache',
+            dest: 'src/js/templates/modal-text.js'
         }
     };
 };

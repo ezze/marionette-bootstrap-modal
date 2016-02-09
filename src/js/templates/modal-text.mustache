@@ -1,0 +1,13 @@
+{{#paragraph}}
+{{#blocks}}
+<p{{#paragraphCssClass}} class="{{paragraphCssClass}}"{{/paragraphCssClass}}>{{.}}</p>
+{{/blocks}}
+{{/paragraph}}
+
+{{#list}}
+<ul{{#listCssClass}} class="{{listCssClass}}"{{/listCssClass}}>
+{{#blocks}}
+    <li{{#listItemCssClass}} class="{{listItemCssClass}}"{{/listItemCssClass}}>{{.}}</li>
+{{/blocks}}
+</ul>
+{{/list}}
