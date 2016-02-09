@@ -226,6 +226,39 @@ Modal manager can be used with [i18next](http://i18next.com/):
 Each time event `i18nEventName` is triggered on `i18nEventObject` object or attribute `i18nEventAttribute` of
 model `i18nEventObject` is changed current active modal view will be translated by calling its `this.$el.i18n()`.
 
+## Predefined modal windows
+
+### Text blocks
+
+Show static text blocks as paragraphs:
+
+    // Text blocks as paragraphs
+    modalManager.showText({
+        type: 'paragraph',
+        paragraphCssClass: 'paragraph',             // defaults to 'modal-paragraph'
+        blocks: [
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Praesent et convallis neque.',
+            'Vivamus vel quam quis nibh ornare viverra.',
+            'Interdum et malesuada fames ac ante ipsum primis in faucibus.'
+        ]
+    });
+    
+Show static text blocks as list:    
+    
+    // Text blocks as list items
+    modalManager.showText({
+        type: 'list',
+        listCssClass: 'list',                       // defaults to 'modal-list'
+        listItemCssClass: 'list-item',              // defaults to 'modal-list-item'
+        blocks: [
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Praesent et convallis neque.',
+            'Vivamus vel quam quis nibh ornare viverra.',
+            'Interdum et malesuada fames ac ante ipsum primis in faucibus.'
+        ]
+    });
+
 ## Contribution
 
 Before making a pull request, please, be sure that your changes are rebased to `dev` branch.

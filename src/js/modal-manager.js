@@ -3,12 +3,14 @@ define([
     'jquery',
     'underscore',
     './modal',
+    './views/modal-text-view',
     './views/modal-view'
 ], function(
     Backbone,
     $,
     _,
     Modal,
+    ModalTextView,
     ModalView
 ) {
     'use strict';
@@ -92,6 +94,33 @@ define([
 
             var view = model.get('view');
             return view instanceof Backbone.View ? view : null;
+        },
+        showText: function(options) {
+            options = options || {};
+
+            options.view = new ModalTextView({
+                model: new Backbone.Model({
+                    blocks: options.blocks || [],
+                    type: options.type || 'paragraph',
+                    paragraphCssClass: options.paragraphCssClass || 'modal-paragraph',
+                    listCssClass: options.listCssClass || 'modal-list',
+                    listItemCssClass: options.listItemCssClass || 'modal-list-item'
+                })
+            });
+
+            _.each([
+                'blocks',
+                'type',
+                'paragraphCssClass',
+                'listCssClass',
+                'listItemCssClass'
+            ], function(item) {
+                if (options[item]) {
+                    delete options[item];
+                }
+            });
+
+            this.show(options);
         }
     });
 
