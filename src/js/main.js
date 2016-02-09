@@ -86,6 +86,21 @@ define([
                                 ]
                             });
                             break;
+
+                        case 'confirmation':
+                            var deferred = modalManager.confirm({
+                                title: 'Confirmation',
+                                text: 'Are you sure that you want to confirm something?',
+                                confirmButtonCaption: 'Confirm',
+                                declineButtonCaption: 'Decline'
+                            });
+                            deferred.done(function() {
+                                console.log('confirmed');
+                            });
+                            deferred.fail(function() {
+                                console.log('declined');
+                            });
+                            break;
                     }
                 });
             });

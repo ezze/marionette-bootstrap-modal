@@ -22604,7 +22604,58 @@ define('modal-manager',[
                 }
             });
 
+            return this.show(options);
+        },
+        confirm: function(options) {
+            var deferred = new $.Deferred();
+
+            options.view = new ModalTextView({
+                model: new Backbone.Model({
+                    blocks: [options.text || 'Confirm?'],
+                    type: 'paragraph',
+                    paragraphCssClass: options.textCssClass || 'modal-confirmation-text'
+                })
+            });
+
+            options.closeButton = false;
+            options.buttons = [{
+                id: 'yes',
+                caption: options.confirmButtonCaption || 'Yes',
+                captionI18n: options.confirmButtonCaptionI18n || 'modal.yes',
+                handler: function() {
+                    var hideDeferred = this.hide();
+                    hideDeferred.always(function() {
+                        deferred.resolve();
+                    });
+                }
+            }, {
+                id: 'no',
+                caption: options.declineButtonCaption || 'No',
+                captionI18n: options.declineButtonCaptionI18n || 'modal.no',
+                handler: function() {
+                    var hideDeferred = this.hide();
+                    hideDeferred.always(function() {
+                        deferred.reject();
+                    });
+                }
+            }];
+
+            _.each([
+                'text',
+                'textCssClass',
+                'confirmButtonCaption',
+                'confirmButtonCaptionI18n',
+                'declineButtonCaption',
+                'declineButtonCaptionI18n'
+            ], function(item) {
+                if (options[item]) {
+                    delete options[item];
+                }
+            });
+
             this.show(options);
+
+            return deferred;
         }
     });
 

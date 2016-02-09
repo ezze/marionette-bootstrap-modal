@@ -258,6 +258,25 @@ Show static text blocks as list:
             'Interdum et malesuada fames ac ante ipsum primis in faucibus.'
         ]
     });
+    
+### Confirmation
+
+Show confirmation dialog:
+
+    var deferred = modalManager.confirm({
+        title: 'Confirmation',
+        text: 'Are you sure that you want to confirm something?',
+        confirmButtonCaption: 'Confirm',            // defaults to 'Yes'
+        confirmButtonCaptionI18n: 'modal.yes'       // defaults to 'modal.yes'
+        declineButtonCaption: 'Decline'             // defaults to 'No',
+        declineButtonCaption: 'modal.no'            // defaults to 'modal.no'
+    });
+    deferred.done(function() {
+        console.log('confirmed');
+    });
+    deferred.fail(function() {
+        console.log('declined');
+    });        
 
 ## Contribution
 
