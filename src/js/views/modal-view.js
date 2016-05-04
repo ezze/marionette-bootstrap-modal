@@ -13,6 +13,15 @@ define([
 ) {
     'use strict';
 
+    var buttonStyles = [
+        'default',
+        'primary',
+        'info',
+        'warning',
+        'danger',
+        'disabled'
+    ];
+
     var exports = Marionette.LayoutView.extend({
         className: 'modal fade',
         template: template.modal,
@@ -84,6 +93,25 @@ define([
             this.$el.modal('hide');
 
             return this._hideDeferred;
+        },
+        getButtonStyle: function(id) {
+            var $button = this.ui.button.filter('[data-id="' + id + '"]'),
+                style;
+            _.each(buttonStyles, function(buttonStyle) {
+                if ($button.hasClass('btn-' + buttonStyle)) {
+                    style = buttonStyle;
+                    return false;
+                }
+                return true;
+            });
+            return style ? style : null;
+        },
+        setButtonStyle: function(id, style) {
+            var $button = this.ui.button.filter('[data-id="' + id + '"]');
+            _.each(buttonStyles, function(buttonStyle) {
+                $button.removeClass('btn-' + buttonStyle);
+            });
+            $button.addClass('btn-' + style);
         },
         onRender: function() {
             if (this._i18nEventObject) {
