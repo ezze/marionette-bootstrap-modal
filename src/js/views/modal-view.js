@@ -100,10 +100,10 @@ define([
         setButtonEnabled: function(id, enabled) {
             var $button = this.ui.button.filter('[data-id="' + id + '"]');
             if (enabled) {
-                $button.removeClass('disabled');
+                $button.removeClass('disabled').prop('disabled', false);
             }
             else {
-                $button.addClass('disabled');
+                $button.addClass('disabled').prop('disabled', true);
             }
         },
         getButtonStyle: function(id) {
