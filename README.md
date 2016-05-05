@@ -134,6 +134,7 @@ following properties:
     - `captionI18n` — value of `data-i18n` attribute used to translate button's caption width `i18next`
     (empty by default);
     - `style` — Bootstrap type of button, the same as `closeButtonStyle` (defaults to `default`);
+    - `disabled` — shows whether button is disabled (defaults to `false`);
     - `handler` — a function to execute on button click (`this` refers to active `ModalView` instance, and modal
     window's body `view` and button's `id` are passed as arguments). 
         

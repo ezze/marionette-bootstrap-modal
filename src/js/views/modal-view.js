@@ -18,8 +18,7 @@ define([
         'primary',
         'info',
         'warning',
-        'danger',
-        'disabled'
+        'danger'
     ];
 
     var exports = Marionette.LayoutView.extend({
@@ -94,9 +93,22 @@ define([
 
             return this._hideDeferred;
         },
+        isButtonEnabled: function(id) {
+            var $button = this.ui.button.filter('[data-id="' + id + '"]');
+            return !$button.hasClass('disabled');
+        },
+        setButtonEnabled: function(id, enabled) {
+            var $button = this.ui.button.filter('[data-id="' + id + '"]');
+            if (enabled) {
+                $button.removeClass('disabled').prop('disabled', false);
+            }
+            else {
+                $button.addClass('disabled').prop('disabled', true);
+            }
+        },
         getButtonStyle: function(id) {
             var $button = this.ui.button.filter('[data-id="' + id + '"]'),
-                style;
+                style = null;
             _.each(buttonStyles, function(buttonStyle) {
                 if ($button.hasClass('btn-' + buttonStyle)) {
                     style = buttonStyle;
