@@ -20574,7 +20574,7 @@ if (typeof define === 'function' && define.amd) {
 define('templates/modal-text',['hogan'], function(Hogan) {
   var t = {
     /* jshint ignore:start */
-    'modal-text' : new Hogan.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");if(t.s(t.f("escapeHtml",c,p,1),c,p,0,15,361,"{{ }}")){t.rs(c,p,function(c,p,t){if(t.s(t.f("paragraph",c,p,1),c,p,0,30,142,"{{ }}")){t.rs(c,p,function(c,p,t){if(t.s(t.f("blocks",c,p,1),c,p,0,42,130,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("<p");if(t.s(t.f("paragraphCssClass",c,p,1),c,p,0,67,97,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("paragraphCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.v(t.d(".",c,p,0)));t.b("</p>");t.b("\n" + i);});c.pop();}});c.pop();}if(t.s(t.f("list",c,p,1),c,p,0,166,351,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("<ul");if(t.s(t.f("listCssClass",c,p,1),c,p,0,187,212,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b("\n" + i);if(t.s(t.f("blocks",c,p,1),c,p,0,242,333,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("    <li");if(t.s(t.f("listItemCssClass",c,p,1),c,p,0,271,300,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listItemCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.v(t.d(".",c,p,0)));t.b("</li>");t.b("\n" + i);});c.pop();}t.b("</ul>");t.b("\n" + i);});c.pop();}});c.pop();}t.b("\n" + i);if(!t.s(t.f("escapeHtml",c,p,1),c,p,1,0,0,"")){if(t.s(t.f("paragraph",c,p,1),c,p,0,408,538,"{{ }}")){t.rs(c,p,function(c,p,t){if(t.s(t.f("blocks",c,p,1),c,p,0,424,526,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("        <p");if(t.s(t.f("paragraphCssClass",c,p,1),c,p,0,457,487,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("paragraphCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.t(t.d(".",c,p,0)));t.b("</p>");t.b("\n" + i);});c.pop();}});c.pop();}t.b("\n" + i);if(t.s(t.f("list",c,p,1),c,p,0,563,782,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("    <ul");if(t.s(t.f("listCssClass",c,p,1),c,p,0,588,613,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b("\n" + i);if(t.s(t.f("blocks",c,p,1),c,p,0,651,760,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("            <li");if(t.s(t.f("listItemCssClass",c,p,1),c,p,0,688,717,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listItemCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.t(t.d(".",c,p,0)));t.b("</li>");t.b("\n" + i);});c.pop();}t.b("    </ul>");t.b("\n" + i);});c.pop();}};return t.fl(); },partials: {}, subs: {  }})
+    'modal-text' : new Hogan.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");if(t.s(t.f("additionalViewTop",c,p,1),c,p,0,22,84,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("    <div class=\"modal-text-additional-view-container\"></div>");t.b("\n" + i);});c.pop();}t.b("\n" + i);if(t.s(t.f("escapeHtml",c,p,1),c,p,0,123,469,"{{ }}")){t.rs(c,p,function(c,p,t){if(t.s(t.f("paragraph",c,p,1),c,p,0,138,250,"{{ }}")){t.rs(c,p,function(c,p,t){if(t.s(t.f("blocks",c,p,1),c,p,0,150,238,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("<p");if(t.s(t.f("paragraphCssClass",c,p,1),c,p,0,175,205,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("paragraphCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.v(t.d(".",c,p,0)));t.b("</p>");t.b("\n" + i);});c.pop();}});c.pop();}if(t.s(t.f("list",c,p,1),c,p,0,274,459,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("<ul");if(t.s(t.f("listCssClass",c,p,1),c,p,0,295,320,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b("\n" + i);if(t.s(t.f("blocks",c,p,1),c,p,0,350,441,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("    <li");if(t.s(t.f("listItemCssClass",c,p,1),c,p,0,379,408,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listItemCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.v(t.d(".",c,p,0)));t.b("</li>");t.b("\n" + i);});c.pop();}t.b("</ul>");t.b("\n" + i);});c.pop();}});c.pop();}t.b("\n" + i);if(!t.s(t.f("escapeHtml",c,p,1),c,p,1,0,0,"")){if(t.s(t.f("paragraph",c,p,1),c,p,0,516,646,"{{ }}")){t.rs(c,p,function(c,p,t){if(t.s(t.f("blocks",c,p,1),c,p,0,532,634,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("        <p");if(t.s(t.f("paragraphCssClass",c,p,1),c,p,0,565,595,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("paragraphCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.t(t.d(".",c,p,0)));t.b("</p>");t.b("\n" + i);});c.pop();}});c.pop();}t.b("\n" + i);if(t.s(t.f("list",c,p,1),c,p,0,671,890,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("    <ul");if(t.s(t.f("listCssClass",c,p,1),c,p,0,696,721,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b("\n" + i);if(t.s(t.f("blocks",c,p,1),c,p,0,759,868,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("            <li");if(t.s(t.f("listItemCssClass",c,p,1),c,p,0,796,825,"{{ }}")){t.rs(c,p,function(c,p,t){t.b(" class=\"");t.b(t.v(t.f("listItemCssClass",c,p,0)));t.b("\"");});c.pop();}t.b(">");t.b(t.t(t.d(".",c,p,0)));t.b("</li>");t.b("\n" + i);});c.pop();}t.b("    </ul>");t.b("\n" + i);});c.pop();}};t.b("\n" + i);if(t.s(t.f("additionalViewBottom",c,p,1),c,p,0,942,1000,"{{ }}")){t.rs(c,p,function(c,p,t){t.b("<div class=\"modal-text-additional-view-container\"></div>");t.b("\n" + i);});c.pop();}return t.fl(); },partials: {}, subs: {  }})
     /* jshint ignore:end */
   },
   r = function(n) {
@@ -20601,11 +20601,24 @@ define('views/modal-text-view',[
     var exports = Marionette.ItemView.extend({
         className: 'modal-text',
         template: template['modal-text'],
+        ui: {
+            additionalViewContainer: '.modal-text-additional-view-container'
+        },
         serializeData: function() {
             var data = exports.__super__.serializeData.apply(this, arguments);
             data.paragraph = data.type === 'paragraph';
             data.list = data.type === 'list';
+            data.additionalViewTop = (data.additionalView instanceof Backbone.View && data.additionalViewOnTop);
+            data.additionalViewBottom = (data.additionalView instanceof Backbone.View && !data.additionalViewOnTop);
             return data;
+        },
+        onRender: function() {
+            var additionalView = this.model.get('additionalView');
+            if (!additionalView) {
+                return;
+            }
+            additionalView.render();
+            this.ui.additionalViewContainer.append(additionalView.$el);
         }
     });
 
@@ -23254,6 +23267,11 @@ define('modal-manager',[
         showText: function(options) {
             options = options || {};
 
+            var additionalView = null;
+            if (options.view instanceof Backbone.View) {
+                additionalView = options.view;
+            }
+
             options.view = new ModalTextView({
                 model: new Backbone.Model({
                     blocks: options.blocks || [],
@@ -23261,7 +23279,9 @@ define('modal-manager',[
                     paragraphCssClass: options.paragraphCssClass || 'modal-paragraph',
                     listCssClass: options.listCssClass || 'modal-list',
                     listItemCssClass: options.listItemCssClass || 'modal-list-item',
-                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true
+                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true,
+                    additionalView: additionalView,
+                    additionalViewOnTop: _.isBoolean(options.viewOnTop) ? options.viewOnTop : false
                 })
             });
 
@@ -23282,12 +23302,19 @@ define('modal-manager',[
         confirm: function(options) {
             var deferred = new $.Deferred();
 
+            var additionalView = null;
+            if (options.view instanceof Backbone.View) {
+                additionalView = options.view;
+            }
+
             options.view = new ModalTextView({
                 model: new Backbone.Model({
                     blocks: [options.text || 'Confirm?'],
                     type: 'paragraph',
                     paragraphCssClass: options.textCssClass || 'modal-confirmation-text',
-                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true
+                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true,
+                    additionalView: additionalView,
+                    additionalViewOnTop: _.isBoolean(options.viewOnTop) ? options.viewOnTop : false
                 })
             });
 
@@ -23296,6 +23323,7 @@ define('modal-manager',[
                 id: 'yes',
                 caption: options.confirmButtonCaption || 'Yes',
                 captionI18n: options.confirmButtonCaptionI18n || 'modal.yes',
+                style: 'primary',
                 handler: function() {
                     var hideDeferred = this.hide();
                     hideDeferred.always(function() {

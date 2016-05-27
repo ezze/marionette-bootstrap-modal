@@ -68,7 +68,13 @@ define([
                                     'Aenean orci turpis, fringilla a blandit vitae, cursus non erat. Suspendisse elementum, enim vitae gravida viverra, tortor nulla gravida erat, eu fermentum mauris elit id lorem.'
                                     /* jshint ignore:end */
                                 ],
-                                escapeHtml: false
+                                escapeHtml: false,
+                                view: new Marionette.ItemView({
+                                    template: _.template('<p>Hello, <%- value %>!</p>'),
+                                    model: new Backbone.Model({
+                                        value: 'world'
+                                    })
+                                })
                             });
                             break;
 
@@ -84,7 +90,15 @@ define([
                                     'Etiam sed sapien quis ex pulvinar egestas a ut velit. Sed malesuada sodales ex, nec interdum felis gravida a. Aenean sagittis, quam nec suscipit imperdiet, quam sapien lobortis augue, nec tempus nunc lacus ac odio.',
                                     'Aenean orci turpis, fringilla a blandit vitae, cursus non erat. Suspendisse elementum, enim vitae gravida viverra, tortor nulla gravida erat, eu fermentum mauris elit id lorem.'
                                     /* jshint ignore:end */
-                                ]
+                                ],
+                                escapeHtml: true,
+                                view: new Marionette.ItemView({
+                                    template: _.template('<p>Hello, <%- value %>!</p>'),
+                                    model: new Backbone.Model({
+                                        value: 'world'
+                                    })
+                                }),
+                                viewOnTop: true
                             });
                             break;
 
@@ -93,7 +107,14 @@ define([
                                 title: 'Confirmation',
                                 text: 'Are you sure that you want to confirm something?',
                                 confirmButtonCaption: 'Confirm',
-                                declineButtonCaption: 'Decline'
+                                declineButtonCaption: 'Decline',
+                                view: new Marionette.ItemView({
+                                    template: _.template('<p>Hello, <%- value %>!</p>'),
+                                    model: new Backbone.Model({
+                                        value: 'world'
+                                    })
+                                }),
+                                viewOnTop: true
                             });
                             deferred.done(function() {
                                 console.log('confirmed');

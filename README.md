@@ -243,7 +243,14 @@ Show static text blocks as paragraphs:
             'Vivamus vel quam quis nibh ornare viverra.',
             'Interdum et malesuada fames ac ante ipsum primis in faucibus.'
         ],
-        escapeHtml: false                           // defaults to `true`
+        escapeHtml: false                           // defaults to `true`,
+        view: new Marionette.ItemView({             // defaults to `null`
+            template: _.template('<p>Hello, <%- value %>!</p>'),
+            model: new Backbone.Model({
+                value: 'world'
+            })
+        }),
+        viewOnTop: false                            // defaults to `false`
     });
     
 Show static text blocks as list:    
@@ -258,7 +265,15 @@ Show static text blocks as list:
             'Praesent et convallis neque.',
             'Vivamus vel quam quis nibh ornare viverra.',
             'Interdum et malesuada fames ac ante ipsum primis in faucibus.'
-        ]
+        ],
+        escapeHtml: true                            // defaults to `true`,
+        view: new Marionette.ItemView({             // defaults to `null`
+            template: _.template('<p>Hello, <%- value %>!</p>'),
+            model: new Backbone.Model({
+                value: 'world'
+            })
+        }),
+        viewOnTop: true                             // defaults to `false`
     });
     
 ### Confirmation
@@ -269,9 +284,17 @@ Show confirmation dialog:
         title: 'Confirmation',
         text: 'Are you sure that you want to confirm something?',
         confirmButtonCaption: 'Confirm',            // defaults to 'Yes'
-        confirmButtonCaptionI18n: 'modal.yes'       // defaults to 'modal.yes'
-        declineButtonCaption: 'Decline'             // defaults to 'No',
-        declineButtonCaption: 'modal.no'            // defaults to 'modal.no'
+        confirmButtonCaptionI18n: 'modal.yes',      // defaults to 'modal.yes'
+        declineButtonCaption: 'Decline',            // defaults to 'No',
+        declineButtonCaption: 'modal.no',           // defaults to 'modal.no'
+        escapeHtml: true,                           // defaults to `true`
+        view: new Marionette.ItemView({             // defaults to `null`
+            template: _.template('<p>Hello, <%- value %>!</p>'),
+            model: new Backbone.Model({
+                value: 'world'
+            })
+        }),
+        viewOnTop: true                             // defaults to `false
     });
     deferred.done(function() {
         console.log('confirmed');
