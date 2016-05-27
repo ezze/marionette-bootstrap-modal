@@ -104,7 +104,8 @@ define([
                     type: options.type || 'paragraph',
                     paragraphCssClass: options.paragraphCssClass || 'modal-paragraph',
                     listCssClass: options.listCssClass || 'modal-list',
-                    listItemCssClass: options.listItemCssClass || 'modal-list-item'
+                    listItemCssClass: options.listItemCssClass || 'modal-list-item',
+                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true
                 })
             });
 
@@ -129,7 +130,8 @@ define([
                 model: new Backbone.Model({
                     blocks: [options.text || 'Confirm?'],
                     type: 'paragraph',
-                    paragraphCssClass: options.textCssClass || 'modal-confirmation-text'
+                    paragraphCssClass: options.textCssClass || 'modal-confirmation-text',
+                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true
                 })
             });
 

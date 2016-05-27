@@ -238,11 +238,12 @@ Show static text blocks as paragraphs:
         type: 'paragraph',
         paragraphCssClass: 'paragraph',             // defaults to 'modal-paragraph'
         blocks: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            '<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b>',
             'Praesent et convallis neque.',
             'Vivamus vel quam quis nibh ornare viverra.',
             'Interdum et malesuada fames ac ante ipsum primis in faucibus.'
-        ]
+        ],
+        escapeHtml: false                           // defaults to `true`
     });
     
 Show static text blocks as list:    
