@@ -83,7 +83,7 @@ Therefore [Require.js](http://requirejs.org/) configuration should look like thi
     
 Use modal manager in your AMD module:
 
-    define(function([
+    define([
         'backbone',
         'marionette',
         'modal-manager'
