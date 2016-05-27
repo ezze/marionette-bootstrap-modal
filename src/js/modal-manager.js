@@ -98,6 +98,11 @@ define([
         showText: function(options) {
             options = options || {};
 
+            var additionalView = null;
+            if (options.view instanceof Backbone.View) {
+                additionalView = options.view;
+            }
+
             options.view = new ModalTextView({
                 model: new Backbone.Model({
                     blocks: options.blocks || [],
@@ -105,7 +110,9 @@ define([
                     paragraphCssClass: options.paragraphCssClass || 'modal-paragraph',
                     listCssClass: options.listCssClass || 'modal-list',
                     listItemCssClass: options.listItemCssClass || 'modal-list-item',
-                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true
+                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true,
+                    additionalView: additionalView,
+                    additionalViewOnTop: _.isBoolean(options.viewOnTop) ? options.viewOnTop : false
                 })
             });
 
@@ -126,12 +133,19 @@ define([
         confirm: function(options) {
             var deferred = new $.Deferred();
 
+            var additionalView = null;
+            if (options.view instanceof Backbone.View) {
+                additionalView = options.view;
+            }
+
             options.view = new ModalTextView({
                 model: new Backbone.Model({
                     blocks: [options.text || 'Confirm?'],
                     type: 'paragraph',
                     paragraphCssClass: options.textCssClass || 'modal-confirmation-text',
-                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true
+                    escapeHtml: _.isBoolean(options.escapeHtml) ? options.escapeHtml : true,
+                    additionalView: additionalView,
+                    additionalViewOnTop: _.isBoolean(options.viewOnTop) ? options.viewOnTop : false
                 })
             });
 
@@ -140,6 +154,7 @@ define([
                 id: 'yes',
                 caption: options.confirmButtonCaption || 'Yes',
                 captionI18n: options.confirmButtonCaptionI18n || 'modal.yes',
+                style: 'primary',
                 handler: function() {
                     var hideDeferred = this.hide();
                     hideDeferred.always(function() {
