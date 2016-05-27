@@ -63,11 +63,12 @@ define([
                                 paragraphCssClass: 'modal-paragraph',
                                 blocks: [
                                     /* jshint ignore:start */
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et convallis neque. Vivamus vel quam quis nibh ornare viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+                                    '<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b> Praesent et convallis neque. Vivamus vel quam quis nibh ornare viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
                                     'Etiam sed sapien quis ex pulvinar egestas a ut velit. Sed malesuada sodales ex, nec interdum felis gravida a. Aenean sagittis, quam nec suscipit imperdiet, quam sapien lobortis augue, nec tempus nunc lacus ac odio.',
                                     'Aenean orci turpis, fringilla a blandit vitae, cursus non erat. Suspendisse elementum, enim vitae gravida viverra, tortor nulla gravida erat, eu fermentum mauris elit id lorem.'
                                     /* jshint ignore:end */
-                                ]
+                                ],
+                                escapeHtml: false
                             });
                             break;
 
