@@ -1,5 +1,7 @@
 # Marionette Bootstrap Modal Manager
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ezze/marionette-bootstrap-modal-manager.svg)](https://greenkeeper.io/)
+
 [Bootstrap 3](http://getbootstrap.com/) modal windows support for [Backbone Marionette](http://marionettejs.com/) library.
 
 ## Building
